@@ -30,6 +30,7 @@
     "cookie-parser": "^1.4.6",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongoose": "^6.3.5",
     "nodemon": "^2.0.16",
@@ -51,6 +52,7 @@
     "babel-loader": "^8.2.4",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^28.1.0",
+    "supertest": "^6.2.3",
     "url-loader": "^4.1.1",
     "webpack-dev-server": "^4.8.1"
   }
