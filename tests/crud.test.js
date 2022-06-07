@@ -39,8 +39,8 @@ describe("Should perform Create, Update, Read", () => {
         .post("/users/")
         // .expect("Content-Type", /json/)
         .send(newUser)
-        .then((res) => console.log(res))
-      // .then((res) => expect(res.body).toEqual(newUser))
+        // .then((res) => console.log(res))
+        .then((res) => expect(res.body).toEqual(newUser))
       // .expect(200)
     );
   }, 30000);
