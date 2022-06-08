@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --env=jsdom",
     "start": "NODE_ENV=production nodemon server/server.js",
     "build": "NODE_ENV=production webpack",
     "dev": "concurrently \"cross-env NODE_ENV=development nodemon server/server.js\" \"cross-env NODE_ENV=development webpack serve --open\""
@@ -32,6 +32,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "express": "^4.18.1",
+    "jest-environment-jsdom": "^28.1.1",
     "mongoose": "^6.3.5",
     "nodemon": "^2.0.16",
     "react": "^18.1.0",
@@ -48,11 +49,14 @@
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@testing-library/dom": "^8.13.0",
     "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.2.0",
     "babel-loader": "^8.2.4",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^28.1.0",
     "node-sass": "^7.0.1",
+    "supertest": "^6.2.3",
     "url-loader": "^4.1.1",
     "webpack-dev-server": "^4.8.1"
   }

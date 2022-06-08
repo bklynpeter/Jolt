@@ -1,14 +1,14 @@
-const path = require('path');
-const express = require('express');
+const path = require("path");
+const express = require("express");
 const userRouter = express.Router();
 
 // const authController = require('./../controllers/authController');
-const userController = require('./../controllers/userController');
-const authController = require('../controllers/authController');
+const userController = require("./../controllers/userController");
+const authController = require("../controllers/authController");
 
 // signup
 userRouter.post(
-  '/signup',
+  "/signup",
   userController.checkUserExists,
   userController.createUser,
   // authController.setCookie,
@@ -19,7 +19,7 @@ userRouter.post(
 
 // login
 userRouter.post(
-  '/login',
+  "/login",
   // authController.checkCookie,
   userController.verifyUser,
   (req, res, next) => {

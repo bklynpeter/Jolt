@@ -77,6 +77,7 @@ export default function Login() {
             label="Remember me"
           />
           <Button
+            data-testid="signInButton"
             type="submit"
             fullWidth
             variant="contained"

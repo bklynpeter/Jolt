@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './style.scss';
+
 
 import Login from './Components/Login';
 import SignUp from './Components/Signup';
