@@ -10,7 +10,9 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
-import jolteon from './../assets/jolteon-icon.png';
+// import jolteon from './../assets/jolteon-icon.png';
+import jolteon from '../assets/jolteon-icon.png';
+
 
 export default function Login() {
   const handleSubmit = (event) => {

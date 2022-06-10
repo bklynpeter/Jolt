@@ -1,35 +1,35 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: process.env.NODE_ENV,
-  entry: './client/index.js',
+  entry: "./client/index.js",
   output: {
-    filename: './index.js',
-    path: path.resolve(__dirname, 'public'),
+    filename: "./index.js",
+    path: path.resolve(__dirname, "public"),
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'public'),
-      publicPath: '/',
+      directory: path.resolve(__dirname, "public"),
+      publicPath: "/",
     },
     historyApiFallback: true,
     port: 8080,
     compress: true,
     proxy: {
       //changes domain request comes from
-      '/api': {
-        target: 'http://localhost:3000',
+      "/api": {
+        target: "http://localhost:3000",
         // pathReWrite: { '^/api': '' },
         secure: false,
         changeOrigin: true,
-      }
+      },
     },
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './client/index.html',
-      title: 'development',
+      template: "./client/index.html",
+      title: "development",
     }),
   ],
   module: {
@@ -37,24 +37,24 @@ module.exports = {
       {
         test: /\.jsx?/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         options: {
-          presets: ['@babel/preset-env', '@babel/preset-react'],
+          presets: ["@babel/preset-env", "@babel/preset-react"],
           plugins: [
-            '@babel/plugin-transform-runtime',
-            '@babel/transform-async-to-generator',
+            "@babel/plugin-transform-runtime",
+            "@babel/transform-async-to-generator",
           ],
         },
       },
       {
         test: /.(css|scss)$/,
         exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.(jpg|png)$/,
+        test: /\.(jpg|png)$/i,
         use: {
-          loader: 'url-loader',
+          loader: "url-loader",
         },
       },
       // {
@@ -63,5 +63,5 @@ module.exports = {
       // },
     ],
   },
-  resolve: { extensions: ['.js', '.jsx'] },
+  resolve: { extensions: [".js", ".jsx"] },
 };
